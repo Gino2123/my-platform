@@ -1,0 +1,22 @@
+# Laravel
+app/.env
+app/vendor/
+app/node_modules/
+app/storage/logs/*
+app/storage/framework/cache/*
+app/storage/framework/sessions/*
+app/storage/framework/views/*
+app/bootstrap/cache/*
+
+# Docker
+docker-compose.override.yml
+*.env.local
+
+# Terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup
+
+# OS
+.DS_Store
+Thumbs.db
