@@ -77,6 +77,21 @@ jobs:
         working-directory: app
         run: php artisan migrate --force
 
+      # Compiler les assets dans le CI est souvent inutile, surtout si les tests ne les utilisent pas directement. Cependant, si vous avez des tests qui dépendent des assets compilés (par exemple, des tests d'intégration ou de bout en bout), vous pouvez ajouter les étapes suivantes pour installer Node.js et compiler les assets :
+      # utile pour les tests end-to-end plus tard
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20"
+      #     cache: "npm"
+      #     cache-dependency-path: app/package-lock.json
+
+      # - name: Install & build assets
+      #   working-directory: app
+      #   run: |
+      #     npm ci
+      #     npm run build
+
       - name: Run tests
         working-directory: app
         run: php artisan test # --parallel
