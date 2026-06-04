@@ -79,7 +79,7 @@ jobs:
 
       - name: Run tests
         working-directory: app
-        run: php artisan test #--parallel
+        run: php artisan test 
 
   # ─── Job 2 : Build image Docker ────────────────────────────
   build:
