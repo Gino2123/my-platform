@@ -1,0 +1,12 @@
+.git
+.github
+docs
+infra
+k8s
+docker-compose.yml
+
+app/node_modules
+app/storage/logs/*
+app/storage/framework/cache/*
+app/storage/framework/sessions/*
+app/storage/framework/views/*

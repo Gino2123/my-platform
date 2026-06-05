@@ -1,0 +1,14 @@
+# k8s/database/pvc.yaml
+# Volume persistant MySQL
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: platform
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

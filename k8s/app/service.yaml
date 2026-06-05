@@ -1,0 +1,15 @@
+# k8s/app/service.yaml
+# Exposition interne
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-service
+  namespace: platform
+spec:
+  selector:
+    app: laravel-app
+  ports:
+    - port: 9000
+      targetPort: 9000
+  type: ClusterIP

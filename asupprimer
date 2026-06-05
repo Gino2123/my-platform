@@ -1,0 +1,26 @@
+k8s/
+├── namespace.yaml          # Isolation du projet
+├── app/
+│   ├── configmap.yaml      # Variables d'environnement
+│   ├── secret.yaml         # Secrets chiffrés
+│   ├── deployment.yaml     # Laravel App (PHP-FPM)
+│   └── service.yaml        # Exposition interne
+├── nginx/
+│   ├── configmap.yaml      # Config NGINX
+│   ├── deployment.yaml     # NGINX
+│   └── service.yaml
+├── database/
+│   ├── pvc.yaml            # Volume persistant MySQL
+│   ├── deployment.yaml     # MySQL
+│   └── service.yaml
+├── redis/
+│   ├── pvc.yaml            # Volume persistant Redis
+│   ├── deployment.yaml     # Redis
+│   └── service.yaml
+└── ingress/
+    └── ingress.yaml        # Traefik Ingress (point d'entrée HTTP)
+
+
+
+
+    
