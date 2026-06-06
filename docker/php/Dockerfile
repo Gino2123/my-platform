@@ -37,10 +37,34 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Config PHP
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/custom.ini
 
+# Répertoire applicatif
 WORKDIR /var/www/html
 
+# IMPORTANT
+# Copie du projet Laravel
+COPY app/ .
+
+# Installation des dépendances PHP
+RUN composer install \
+    --no-dev \
+    --optimize-autoloader \
+    --no-interaction
+
+# Permissions Laravel
+RUN mkdir -p storage/logs bootstrap/cache && \
+    chown -R www-data:www-data storage bootstrap/cache && \
+    chmod -R 775 storage bootstrap/cache
+
+RUN chown -R www-data:www-data \
+    storage \
+    bootstrap/cache
+
+# Exécution en utilisateur non privilégié
+USER www-data
+
 # Droits
-RUN addgroup -g 1000 www && adduser -u 1000 -G www -s /bin/sh -D www
-USER www
+#RUN addgroup -g 1000 www && adduser -u 1000 -G www -s /bin/sh -D www
+#USER www
 
 EXPOSE 9000
+CMD ["php-fpm"]

@@ -1,0 +1,10 @@
+# k8s/namespace.yaml
+# Isolation du projet
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: platform
+  labels:
+    app: my-platform
+    env: production

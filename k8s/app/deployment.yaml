@@ -1,0 +1,50 @@
+# k8s/app/deployment.yaml
+# Laravel App (PHP-FPM)
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-app
+  namespace: platform
+spec:
+  replicas: 2                      # Haute disponibilité : 2 instances
+  selector:
+    matchLabels:
+      app: laravel-app
+  strategy:
+    type: RollingUpdate            # Zéro downtime au déploiement
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: laravel-app
+    spec:
+      containers:
+        - name: laravel-app
+          image: ghcr.io/gino2123/my-platform/app:latest
+          ports:
+            - containerPort: 9000
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secret
+          readinessProbe:
+            tcpSocket:
+              port: 9000
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 9000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
