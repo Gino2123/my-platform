@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('myview');
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {
