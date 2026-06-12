@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #3b83f6;      /* bleu principal */
+  --blue-secondary: #3b83f6;      /* bleu transparent */
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 15px;
+    background-color: rgba(7, 43, 71);
+    color: rgb(229, 231, 235);
+    /*height: 100vh;               /* occupe toute la hauteur de la fenêtre */
+    /*display: flex;               /* active flexbox */
+    /*justify-content: center;     /* centre horizontalement */
+    /*align-items: center;         /* centre verticalement */
+    /* background: #f0f0f0;        /* couleur de fond pour voir l'effet  */
+}
+
+/* Hero section style */
+
+.hero-section {
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(229, 231, 235);
+    /* background: #bfb6b690; */
+}
+
+.hero-module  {
+    width: 50%;
+    padding: 15px 10px;
+    margin-left: 10px;
+    /* background: #bfb6b6a4; */
+}
+
+.hero-module .title{
+    color: rgb(34, 211, 238);
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.hero-module .description p {
+  font-size: 33px;
+  font-weight: normal;
+  margin: 0.5rem 0;
+}
+
+.hero-module .description p:nth-child(1) span.mark1 {
+  color: rgb(0, 0, 255);
+}
+
+.hero-module .description p:nth-child(2) span.mark2 {
+  color: rgb(185, 28, 28);
+}
+
+ .hero-module .cta_button {
+  margin-top: 1.5rem;
+  display: flex;
+   /* justify-content: center;  */
+  gap: 1rem; /* espace entre les boutons */
+  font-family: 'Inter';
+  font-weight: bold;
+} 
+
+.hero-module .cta_button button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px; /* angles arrondis */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-module .cta_button button:hover {
+  background: #f0f0f0; /* effet hover */
+}
+
+.hero{
+ /* height: 400px; */
+    background: #bfb6b6a4;
+}
+
+.hero img{
+  /* width: 300px; */
+  /* height: 500px; */
+}
+
+/* System overview style */
+
+.system-overview{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+    /* background-color: #bdbaba; */
+}
+
+.system-overview section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.system-overview .title{
+  font-family: 'JetBrains Mono';
+  font-weight: 500;
+  font-size: 15px;
+  color: #3b83f6;
+}
+
+.statement{
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 25px;
+  color: #E5E7EB;
+}
+
+.system-overview .description{
+  font-family: 'Inter';
+  font-weight:400;
+  font-size: 15px;
+  color: #E5E7EB;
+}
+
+.system-diagram {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem;
+}
+
+.system-item .content{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 10px;
+}
+
+.system-item .icon{
+  width: 35px;
+  height: 35px;
+  margin: 0;
+}
+
+.system-item .item-title{
+  font-family: 'Inter';
+  font-weight:400;
+  font-size: 15px;
+  color: #E5E7EB;
+}
+
+.system-item .specif{
+  font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-size: 15px;
+  color: #9CA3AF;
+}
+
+.system-global{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.global-item {
+  display: flex;
+}
+
+.global-item .item {
+  padding: 0 10px;
+}
+
+.system-global img {
+  width: 300px;
+  padding-bottom: 5px;
+  /* height: 100px; */
+}
+
+/* Positioning */
+
+.positioning{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.positioning section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.positioning .title{
+  font-family: 'JetBrains Mono';
+  font-weight: 500;
+  font-size: 15px;
+  color: #3b83f6;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem;
+  height: 350px;
+}
+
+.position-card{
+  width: 18%;
+  /* min-height: 350px; */
+  display: flex;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+}
+
+.position-card .content{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* align-items: center; */
+  /* margin: 15px 10px; */
+}
+
+.position-card .icon{
+  flex: 0 0 30%;
+  margin-top: 20px;
+}
+
+.position-card .card-text{
+  flex: 0 0 70%;
+}
+
+.position-card img{
+  width: 60px;
+  height: 60px;
+}
+
+.card-text, .icon{
+  margin-left: 15px;
+}
+
+.card-title{
+  font-family: 'Space Grotesk';
+  font-weight: bold;
+  font-size: 30px;
+  color: #E5E7EB;
+  /* margin: 15px 0px; */
+}
+
+.card-specif{
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 20px;
+  margin: 15px 0;
+  padding-right: 5px;
+}
+
+.system-global{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.global-item {
+  display: flex;
+}
+
+.global-item .item {
+  padding: 0 10px;
+}
